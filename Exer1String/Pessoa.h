@@ -16,7 +16,7 @@ public:
 	string GetNome();
 	void SetNome(string n);
 	string GetCpf();
-	int SetCpf(string c); //bool
+	bool SetCpf(string c); //bool
 	string GetEndereco();
 	void SetEndereco(string end);
 	string GetNascimento();
