@@ -1,7 +1,9 @@
 #include "Turma.h"
 
-Turma::Turma(int n, int c)
+Turma::Turma(int n, int cod)
 {
+	numero = n;
+	disciplina.setCodigo(cod);
 }
 
 void Turma::setNumero(int novoNumero)
@@ -10,18 +12,28 @@ void Turma::setNumero(int novoNumero)
 		numero = novoNumero;
 }
 
+void Turma::setCodigoDisciplina(int cod)
+{
+	if (cod > 0)
+		disciplina.setCodigo(cod);
+}
+
 int Turma::getNumero()
 {
 	return numero;
 }
 
-void Turma::setCodigo(int novoCodigo)
+int Turma::getCodigoDisciplina()
 {
-	if (novoCodigo > 0)
-		codigo = novoCodigo;
+	return disciplina.getCodigo();
 }
 
-int Turma::getCodigo()
+void Turma::adcionaAluno(Aluno novo)
 {
-	return codigo;
+
+}
+
+int Turma::contagemAlunos()
+{
+
 }
