@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClCompile Include="Aluno.cpp" />
     <ClCompile Include="Disciplina.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Turma.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

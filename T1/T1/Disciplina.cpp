@@ -1,8 +1,12 @@
 #include "Disciplina.h"
 
-Disciplina::Disciplina(int c, string n)
+Disciplina::Disciplina()
 {
-	codigo = c;
+}
+
+Disciplina::Disciplina(int cod, string n)
+{
+	codigo = cod;
 	nome = n;
 }
 

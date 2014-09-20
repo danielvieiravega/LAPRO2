@@ -1,5 +1,9 @@
 #include "Aluno.h"
 
+Aluno::Aluno()
+{
+}
+
 Aluno::Aluno(int m, string n)
 {
 	matricula = m;
