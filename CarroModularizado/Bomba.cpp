@@ -3,5 +3,5 @@
 
 float Bomba::receberCombustivel(float armazenar)
 {
-
+	return 1.0;
 }
