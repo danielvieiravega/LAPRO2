@@ -80,15 +80,23 @@ int main()
 	
 	for (int i = 0; i < tamVetDisciplinas; ++i)
 	{
-		if (vetTurmas[i].alunos. == nome)
+		for (int j = 0; j < tamVetTurmas; ++j)
+		{
+			if (vetTurmas[i].getAlunosMatriculas()[j].getNome() == nome)
+			{
+				cout << "Codigo" << endl << vetDisciplinas[i].getCodigo() << setw(6) << "Disciplina" << endl << vetDisciplinas[i].getNome() << setw(6) << "Turma" << endl << vetDisciplinas[i].getCodigo();
+			}
+			else
+			{
+				cout << nome << endl;
+				cout << "Aluno não encontrado!" << endl;
+			}
+		}
+		/*if (vetTurmas[i].getAlunosMatriculas()->getNome() == nome)
 		{
 			cout << "Codigo" << endl << vetDisciplinas[i].getCodigo() << setw(6) << "Disciplina" << endl << vetDisciplinas[i].getNome() << setw(6) << "Turma" << endl << vetDisciplinas[i].getCodigo();
-		}
-		else
-		{
-			cout << nome << endl;
-			cout << "Aluno não encontrado!" << endl;
-		}
+		}*/
+
 	}
 	/*
 	Aluno: Sean Connery

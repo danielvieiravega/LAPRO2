@@ -64,21 +64,9 @@ int Turma::getAlunoPorPosicaoNaTurma(Aluno aluno)
 	return -1; //Se o aluno pesquisado não existe
 }
 
-std::vector<Aluno> Turma::getAlunosNaTurma()
+Aluno* Turma::getAlunosMatriculas()
 {
-	vector<Aluno> alunos;
+	return alunos;
 }
 
 
-/*
-std::vector<int> test() {
-std::vector<int> vector(10);
-return vector;
-}
-Now you don't have to call delete[], since it will be handled by the object, and you can safely iterate it with:
-
-std::vector<int> v = test();
-std::vector<int>::iterator it = v.begin();
-for (; it != v.end(); ++it) {
-// do your things
-}*/
