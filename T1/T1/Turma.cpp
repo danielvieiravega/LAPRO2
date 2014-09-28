@@ -1,10 +1,12 @@
 #include "Turma.h"
 
+int quantidadeAlunos = 0;
+
 Turma::Turma()
 {
 }
 
-Turma::Turma(int n, int cod)
+Turma::Turma(int n, string cod)
 {
 	numero = n;
 	disciplina.setCodigo(cod);
@@ -12,8 +14,8 @@ Turma::Turma(int n, int cod)
 /*
 Turma::Turma(int n, const Disciplina& disc)
 {
-	numero = n;
-	disciplina = disc;
+numero = n;
+disciplina = disc;
 }
 */
 
@@ -23,10 +25,9 @@ void Turma::setNumero(int novoNumero)
 		numero = novoNumero;
 }
 
-void Turma::setCodigoDisciplina(int cod)
+void Turma::setCodigoDisciplina(string cod)
 {
-	if (cod > 0)
-		disciplina.setCodigo(cod);
+	disciplina.setCodigo(cod);
 }
 
 int Turma::getNumero()
@@ -34,7 +35,7 @@ int Turma::getNumero()
 	return numero;
 }
 
-int Turma::getCodigoDisciplina()
+string Turma::getCodigoDisciplina()
 {
 	return disciplina.getCodigo();
 }
@@ -62,3 +63,22 @@ int Turma::getAlunoPorPosicaoNaTurma(Aluno aluno)
 	}
 	return -1; //Se o aluno pesquisado não existe
 }
+
+std::vector<Aluno> Turma::getAlunosNaTurma()
+{
+	vector<Aluno> alunos;
+}
+
+
+/*
+std::vector<int> test() {
+std::vector<int> vector(10);
+return vector;
+}
+Now you don't have to call delete[], since it will be handled by the object, and you can safely iterate it with:
+
+std::vector<int> v = test();
+std::vector<int>::iterator it = v.begin();
+for (; it != v.end(); ++it) {
+// do your things
+}*/

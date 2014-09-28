@@ -4,19 +4,18 @@ Disciplina::Disciplina()
 {
 }
 
-Disciplina::Disciplina(int cod, string n)
+Disciplina::Disciplina(string cod, string n)
 {
 	codigo = cod;
 	nome = n;
 }
 
-void Disciplina::setCodigo(int novoCodigo)
+void Disciplina::setCodigo(string novoCodigo)
 {
-	if (novoCodigo > 0)
-		codigo = novoCodigo;
+	codigo = novoCodigo;
 }
 
-int Disciplina::getCodigo()
+string Disciplina::getCodigo()
 {
 	return codigo;
 }

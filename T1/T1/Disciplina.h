@@ -8,15 +8,23 @@ using namespace std;
 class Disciplina
 {
 private:
-	int codigo;
+	string codigo;
 	string nome;
 public:
 	Disciplina();
-	Disciplina(int cod, string n);
-	void setCodigo(int novoCodigo);
+	Disciplina(string cod, string n);
+	void setCodigo(string novoCodigo);
 	void setNome(string novoNome);
-	int getCodigo();
+	string getCodigo();
 	string getNome();
 };
 
 #endif
+
+/*
+Uma disciplina consiste em um código e um nome. Deve ser possível realizar as seguintes operações:
+Construtor, que recebe o código e o nome;
+Alterar o código da disciplina;
+Alterar o nome da disciplina;
+Obter o código da disciplina;
+Obter nome da disciplina;*/
