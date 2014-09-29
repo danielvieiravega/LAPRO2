@@ -69,4 +69,8 @@ Aluno* Turma::getAlunosMatriculas()
 	return alunos;
 }
 
+void Turma::consultaDisciplinas(int m)
+{
+
+}
 

@@ -23,6 +23,7 @@ public:
 	int getQuantidadeAlunosMatriculados();
 	int getAlunoPorPosicaoNaTurma(Aluno aluno);
 	Aluno *getAlunosMatriculas();
+	void consultaDisciplinas(int m);
 };
 
 #endif
