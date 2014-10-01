@@ -71,33 +71,49 @@ int main()
 	vetTurmas[2] = t2;
 	vetTurmas[3] = t3;
 
-	//Variavel utilizada para efetuar a pesquisa de disciplina
-	string nome;
+	//Variavel utilizada para armazenar a matricula do aluno a ser pesquisado 
+	int matricula;
 
 	//Consulta de disciplina
-	cout << "Aluno: ";
-	getline(cin, nome);
+	cout << "Informe o numero da matricula a ser pesquisada: ";
+	cin >> matricula;
+	//getline(cin, nomeAluno);
 	
-	for (int i = 0; i < tamVetDisciplinas; ++i)
+	int quantidadeAlunosMatriculados = 0;
+	for(int i=0; i<tamVetTurmas;i++)
 	{
-		for (int j = 0; j < tamVetTurmas; ++j)
-		{
-			if (vetTurmas[i].getAlunosMatriculas()[j].getNome() == nome)
+		quantidadeAlunosMatriculados = vetTurmas[i].getQuantidadeAlunosMatriculados();
+		for(int j = 0; j< quantidadeAlunosMatriculados; j++){
+			if(matricula == vetTurmas[i].getAlunosMatriculas()[j].getMatricula())
 			{
-				cout << "Codigo" << endl << vetDisciplinas[i].getCodigo() << setw(6) << "Disciplina" << endl << vetDisciplinas[i].getNome() << setw(6) << "Turma" << endl << vetDisciplinas[i].getCodigo();
-			}
-			else
-			{
-				cout << nome << endl;
-				cout << "Aluno não encontrado!" << endl;
+				cout << matricula << " " << vetTurmas[i].getAlunosMatriculas()[j].getNome() << " " << vetTurmas[i].getAlunosMatriculas()[j].getMatricula();
 			}
 		}
-		/*if (vetTurmas[i].getAlunosMatriculas()->getNome() == nome)
-		{
-			cout << "Codigo" << endl << vetDisciplinas[i].getCodigo() << setw(6) << "Disciplina" << endl << vetDisciplinas[i].getNome() << setw(6) << "Turma" << endl << vetDisciplinas[i].getCodigo();
-		}*/
-
 	}
+
+
+
+
+	//for (int i = 0; i < tamVetDisciplinas; ++i)
+	//{
+	//	for (int j = 0; j < tamVetTurmas; ++j)
+	//	{
+	//		if (vetTurmas[i].getAlunosMatriculas()[j].getNome() == nomeAluno)
+	//		{
+	//			cout << "Codigo" << endl << vetDisciplinas[i].getCodigo() << setw(6) << "Disciplina" << endl << vetDisciplinas[i].getNome() << setw(6) << "Turma" << endl << vetDisciplinas[i].getCodigo();
+	//		}
+	//		else
+	//		{
+	//			cout << nome << endl;
+	//			cout << "Aluno não encontrado!" << endl;
+	//		}
+	//	}
+	//	/*if (vetTurmas[i].getAlunosMatriculas()->getNome() == nome)
+	//	{
+	//		cout << "Codigo" << endl << vetDisciplinas[i].getCodigo() << setw(6) << "Disciplina" << endl << vetDisciplinas[i].getNome() << setw(6) << "Turma" << endl << vetDisciplinas[i].getCodigo();
+	//	}*/
+
+	//}
 	/*
 	Aluno: Sean Connery
 Codigo     Disciplina           Turma

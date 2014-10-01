@@ -9,8 +9,8 @@ No programa principal, crie uma televisão e troque de canal algumas vezes. Aumen
 class Televisao
 {
 private:
-	int volume = 0;
-	int canal = 1;
+	int volume;
+	int canal;
 public:
 	Televisao();
 	~Televisao();
@@ -25,6 +25,8 @@ public:
 
 Televisao::Televisao()
 {
+	volume = 0;
+	canal = 1;
 }
 
 Televisao::~Televisao()
@@ -33,7 +35,8 @@ Televisao::~Televisao()
 
 void Televisao::AumentarVolume()
 {
-	volume++;
+	if (volume < 10)
+		volume++;
 }
 
 void Televisao::DiminuirVolume()

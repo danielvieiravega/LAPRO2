@@ -10,7 +10,7 @@ No programa principal, crie 2 elevadores e faça alguns movimentos (subir e/ou de
 class Elevador
 {
 private:
-	int andar = 1;
+	int andar;
 public:
 	void Subir();
 	void Descer();
@@ -20,6 +20,7 @@ public:
 
 void Elevador::Subir()
 {
+	andar = 1;
 	andar++;
 }
 

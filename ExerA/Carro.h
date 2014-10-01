@@ -13,8 +13,8 @@ Desloque o primeiro em 200 km e o segundo em 400 km. Exiba na tela a distância p
 #pragma once
 class Carro{
 private:
-	float tanque = 0;
-	float distancia = 0;
+	float tanque;
+	float distancia;
 public:
 	Carro(float t, float d);
 	void abastecer(float t);
@@ -25,6 +25,8 @@ public:
 
 Carro::Carro(float t, float d)
 {
+	tanque = 0;
+	distancia = 0;
 	tanque = t;
 	distancia = d;
 }
