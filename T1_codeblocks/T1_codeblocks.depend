@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1412434988 source:/home/daniel/Repos/LAPRO2/T1_codeblocks/main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+
