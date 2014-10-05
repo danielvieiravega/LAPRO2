@@ -103,6 +103,32 @@ string Disciplina::getNome()
 }
 #endif REGIAO_DISCIPLINAS
 
+
+class ConsultaDeAlunos
+{
+public:
+	string toString();
+	ConsultaDeAlunos(int m, string n);
+private:
+	int matricula;
+	string nome;
+};
+
+string ConsultaDeAlunos::toString()
+{
+	ostringstream aux;
+	aux << matricula << "\t" << nome << endl;
+	return aux.str();
+}
+
+ConsultaDeAlunos::ConsultaDeAlunos(int m, string n)
+{
+	matricula = m;
+	nome = n;
+}
+
+
+#ifndef REGIAO_ConsultaDisciplinas
 class ConsultaDisciplinas
 {
 public:
@@ -127,11 +153,11 @@ ConsultaDisciplinas::ConsultaDisciplinas(string c, string n, int num)
 	nome = n;
 	numero = num;
 }
+#endif REGIAO_ConsultaDisciplinas
 
 #ifndef REGIAO_TURMAS
 class Turma
 {
-
 public:
 	static const int turma_size = 10;
 	Turma();
@@ -147,14 +173,13 @@ public:
 	Aluno *getAlunosMatriculados();
 	string consultaDisciplinas(int m);
 	string getAlunoPorMatricula(int m);
+	string consultaDeAlunos();
 private:
 	int numero;
 	Disciplina disciplina;
 	Aluno alunos[turma_size];
 	int qntAlunos = 0;
 };
-
-
 
 Turma::Turma()
 {
@@ -214,7 +239,7 @@ int Turma::getQuantidadeAlunosMatriculados()
 }
 
 int Turma::getAlunoPorPosicaoNaTurma(Aluno& a)
-{ //Todo: Ajeitar isso aque
+{ 
 	for (int i = 0; i < qntAlunos; i++)
 	{
 		if (alunos[i].getNome() == a.getNome())
@@ -251,6 +276,16 @@ string Turma::getAlunoPorMatricula(int m)
 	}
 	return "NE"; //nAO EXISTE
 }
+
+string Turma::consultaDeAlunos()
+{
+	for (int i = 0; i, qntAlunos; i++)
+	{
+		ConsultaDeAlunos consultaAux(alunos[i].getMatricula(), alunos[i].getNome());
+		return consultaAux.toString();
+	}
+	return "NE"; //nAO EXISTE
+}
 #endif REGIAO_TURMAS
 
 void inserirAlunos();
@@ -258,8 +293,11 @@ void inserirAlunosUsandoConstrutor();
 void inserirDisciplinas();
 void inserirDisciplinasUsandoConstrutor();
 void inserirAlunosETurmas();
-void consultaDisciplina(string nome);
 
+
+void exibirNome(int m, Turma t[], int tamVet);
+void exibirListagemDisciplinas(int m, Turma t[], int tamVet);
+void consultaDeDisciplinas(int m, Turma t[], int tamVet);
 int main()
 {
 	//Definem o tamanho dos vetores de disciplinas e turmas.
@@ -328,38 +366,87 @@ int main()
 	int matricula;
 
 	//Consulta de disciplina
-	cout << "Informe o numero da matricula a ser pesquisada: ";
+	cout << "Informe o número da matricula: ";
 	cin >> matricula;
 
+	//Item: Consulta de Disciplinas
+	consultaDeDisciplinas(matricula, vetTurmas, tamVetTurmas);
+
+	//Item Consulta de Alunos
+	string codDisc;
+	int numTurma;
+
+	cout << "Informe o código da disciplina: ";
+	cin >> codDisc;
+
+	cout << "Informe o número da turma: ";
+	cin >> numTurma;
+
+	string nomeDisc;
+
+	cout << "Disciplina: ";
+	for (int i = 0; i < tamVetDisciplinas; i++)
+	{
+		if (vetDisciplinas[i].getCodigo() == codDisc)
+		{
+			cout << vetDisciplinas[i].getCodigo() << " - ";
+			cout << vetDisciplinas[i].getNome() << " - ";
+		}
+	}
+
+	for (int i = 0; i < tamVetTurmas; i++)
+	{
+		if (vetTurmas[i].getNumero() == numTurma)
+			cout << vetTurmas[i].getNumero() << endl;
+	}
+
+	cout << "Matrícula" << "\t" << "Nome" << endl;
+	string discAux;
+	for (int i = 0; i < tamVetTurmas; i++)
+	{
+		if (vetTurmas[i].getNumero() == numTurma)
+		{
+			discAux = vetTurmas[i].consultaDeAlunos();
+			if (discAux != "NE")
+				cout << discAux << endl;
+		}
+	}
+
+	return 0;
+}
+void exibirNome(int m, Turma t[], int tamVet)
+{
 	string nomeAux;
 	bool nomeJaFoiExibido = false;
-
-	cout << "Aluno: ";
-
-	//getline(cin, nomeAluno);
-	for (int i = 0; i < tamVetTurmas; i++){
-		nomeAux = vetTurmas[i].getAlunoPorMatricula(matricula);
+	for (int i = 0; i < tamVet; i++){
+		nomeAux = t[i].getAlunoPorMatricula(m);
 		if (nomeAux != "NE" && !nomeJaFoiExibido)
 		{
 			cout << nomeAux << endl;
 			nomeJaFoiExibido = true;
 		}
 	}
+}
 
-	cout << "Codigo" << setw(20) << "Disciplina" << setw(20) << "Turma" << endl;
-
+void exibirListagemDisciplinas(int m, Turma t[], int tamVet)
+{
 	string consDiscAux;
-	for (int i = 0; i < tamVetTurmas; i++){
-		consDiscAux = vetTurmas[i].consultaDisciplinas(matricula);
+	for (int i = 0; i < tamVet; i++){
+		consDiscAux = t[i].consultaDisciplinas(m);
 		if (consDiscAux != "NE")
 		{
 			cout << consDiscAux;
 		}
 	}
-
-	return 0;
 }
 
+void consultaDeDisciplinas(int m, Turma t[], int tamVet)
+{
+	cout << "Aluno: ";
+	exibirNome(m, t, tamVet);
+	cout << "Codigo" << setw(20) << "Disciplina" << setw(20) << "Turma" << endl;
+	exibirListagemDisciplinas(m, t, tamVet);
+}
 
 #ifndef REGIAO_FUNCOES
 
@@ -459,8 +546,5 @@ void inserirAlunosETurmas()
 	t3.adcionaAluno(a3);
 }
 
-void consultaDisciplina(string nome)
-{
 
-}
 #endif REGIAO_FUNCOES
