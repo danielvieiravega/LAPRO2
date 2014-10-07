@@ -1,5 +1,8 @@
-//Aluno: Daniel Vieira Vega	- Matricula: 11204032-4
-
+/*
+-------------------------------------------------------------
+|  Aluno: Daniel Vieira Vega	Matricula: 11204032-4		|
+-------------------------------------------------------------
+*/
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -16,7 +19,6 @@ class Aluno
 private:
 	int matricula;
 	string nome;
-	//Disciplina disciplina;
 public:
 	Aluno();
 	Aluno(int m, string n);
@@ -103,7 +105,8 @@ string Disciplina::getNome()
 }
 #endif REGIAO_DISCIPLINAS
 
-
+#ifndef REGIAO_CONSULTAALUNOS
+//Classe criada para retornar formatado o item consulta de alunos
 class ConsultaDeAlunos
 {
 public:
@@ -118,7 +121,8 @@ string ConsultaDeAlunos::toString()
 {
 	ostringstream aux;
 	aux << matricula << "\t" << nome << endl;
-	return aux.str();
+	string consulta = aux.str();
+	return consulta;
 }
 
 ConsultaDeAlunos::ConsultaDeAlunos(int m, string n)
@@ -126,8 +130,9 @@ ConsultaDeAlunos::ConsultaDeAlunos(int m, string n)
 	matricula = m;
 	nome = n;
 }
+#endif REGIAO_CONSULTAALUNOS
 
-
+//Classe criada para retornar formatado o item consulta de disciplinas
 #ifndef REGIAO_ConsultaDisciplinas
 class ConsultaDisciplinas
 {
@@ -143,7 +148,7 @@ private:
 string ConsultaDisciplinas::toString()
 {
 	ostringstream aux;
-	aux << codigo << setw(20) << nome << setw(20) << numero << endl;
+	aux << codigo << "\t" << nome << "\t\t" << numero << endl;
 	return aux.str();
 }
 
@@ -167,13 +172,13 @@ public:
 	void setCodigoDisciplina(string cod);
 	int getNumero();
 	string getCodigoDisciplina();
-	void adcionaAluno(const Aluno& novo);
+	void adicionaAluno(const Aluno& novo);
 	int getQuantidadeAlunosMatriculados();
 	int getAlunoPorPosicaoNaTurma(Aluno& a);
 	Aluno *getAlunosMatriculados();
 	string consultaDisciplinas(int m);
-	string getAlunoPorMatricula(int m);
-	string consultaDeAlunos();
+	string getNomeAlunoPorMatricula(int m);
+	string consultaDeAlunos(int posicao);
 private:
 	int numero;
 	Disciplina disciplina;
@@ -223,7 +228,7 @@ string Turma::getCodigoDisciplina()
 	return disciplina.getCodigo();
 }
 
-void Turma::adcionaAluno(const Aluno& novo)
+void Turma::adicionaAluno(const Aluno& novo)
 {
 	if (qntMaximaAlunos < 10)
 	{
@@ -239,7 +244,7 @@ int Turma::getQuantidadeAlunosMatriculados()
 }
 
 int Turma::getAlunoPorPosicaoNaTurma(Aluno& a)
-{ 
+{
 	for (int i = 0; i < qntAlunos; i++)
 	{
 		if (alunos[i].getNome() == a.getNome())
@@ -267,7 +272,7 @@ string Turma::consultaDisciplinas(int m)
 	return "NE";//nAO EXISTE
 }
 
-string Turma::getAlunoPorMatricula(int m)
+string Turma::getNomeAlunoPorMatricula(int m)
 {
 	for (int i = 0; i < qntAlunos; i++)
 	{
@@ -277,14 +282,12 @@ string Turma::getAlunoPorMatricula(int m)
 	return "NE"; //nAO EXISTE
 }
 
-string Turma::consultaDeAlunos()
+string Turma::consultaDeAlunos(int posicao)
 {
-	for (int i = 0; i, qntAlunos; i++)
-	{
-		ConsultaDeAlunos consultaAux(alunos[i].getMatricula(), alunos[i].getNome());
-		return consultaAux.toString();
-	}
-	return "NE"; //nAO EXISTE
+	string consulta = "\t";
+	ConsultaDeAlunos consultaAux(alunos[posicao].getMatricula(), alunos[posicao].getNome());
+	consulta += consultaAux.toString();
+	return consulta;
 }
 #endif REGIAO_TURMAS
 
@@ -318,7 +321,7 @@ int main()
 	Disciplina d4613A("4613A", "Alg. e Prog. I");
 	Disciplina d4610R("4610R", "Computação Gráfica");
 
-	////Turmas usando construtor que recebe uma string cod de disciplina
+	//Turmas usando construtor que recebe uma string cod de disciplina
 	//Turma t490(490, "4612A");
 	//Turma t590(590, "4612A");
 	//Turma t128(128, "4613A");
@@ -332,23 +335,23 @@ int main()
 
 
 	//Adicionando alunos a turma t0
-	t490.adcionaAluno(sean);
-	t490.adcionaAluno(kate);
-	t490.adcionaAluno(lucie);
+	t490.adicionaAluno(sean);
+	t490.adicionaAluno(kate);
+	t490.adicionaAluno(lucie);
 
 	//Adicionando alunos a turma t1
-	t590.adcionaAluno(cameron);
-	t590.adcionaAluno(anthony);
-	t590.adcionaAluno(jackie);
+	t590.adicionaAluno(cameron);
+	t590.adicionaAluno(anthony);
+	t590.adicionaAluno(jackie);
 
 	//Adicionando alunos a turma t2
-	t128.adcionaAluno(anthony);
-	t128.adcionaAluno(jackie);
-	t128.adcionaAluno(lucie);
+	t128.adicionaAluno(anthony);
+	t128.adicionaAluno(jackie);
+	t128.adicionaAluno(lucie);
 
 	//Adicionando alunos a turma t3
-	t168.adcionaAluno(sean);
-	t168.adcionaAluno(anthony);
+	t168.adicionaAluno(sean);
+	t168.adicionaAluno(anthony);
 
 	Disciplina vetDisciplinas[tamVetDisciplinas];
 	vetDisciplinas[0] = d4612A;
@@ -378,19 +381,25 @@ int main()
 
 	cout << "Informe o código da disciplina: ";
 	cin >> codDisc;
+	
+	for (unsigned int i = 0; i < codDisc.length(); i++)
+	{
+		codDisc[i] = toupper(codDisc[i]);
+	}
 
 	cout << "Informe o número da turma: ";
 	cin >> numTurma;
 
-	string nomeDisc;
+	string codDiscAux;
 
 	cout << "Disciplina: ";
 	for (int i = 0; i < tamVetDisciplinas; i++)
 	{
-		if (vetDisciplinas[i].getCodigo() == codDisc)
+		codDiscAux = vetDisciplinas[i].getCodigo();
+		if (codDiscAux == codDisc)
 		{
-			cout << vetDisciplinas[i].getCodigo() << " - ";
-			cout << vetDisciplinas[i].getNome() << " - ";
+			cout << vetDisciplinas[i].getCodigo() << " - " << vetDisciplinas[i].getNome() << " -  Turma" << numTurma;
+			break;
 		}
 	}
 
@@ -400,15 +409,22 @@ int main()
 			cout << vetTurmas[i].getNumero() << endl;
 	}
 
+	int nroTurmaAux;
+	int qntAlunosMatriculados;
 	cout << "Matrícula" << "\t" << "Nome" << endl;
 	string discAux;
 	for (int i = 0; i < tamVetTurmas; i++)
 	{
-		if (vetTurmas[i].getNumero() == numTurma)
+		nroTurmaAux = vetTurmas[i].getNumero();
+		if (nroTurmaAux == numTurma)
 		{
-			discAux = vetTurmas[i].consultaDeAlunos();
-			if (discAux != "NE")
-				cout << discAux << endl;
+			//Obtem a quantidade de alunos matriculados na turma
+			qntAlunosMatriculados = vetTurmas[i].getQuantidadeAlunosMatriculados();
+			for (int j = 0; j < qntAlunosMatriculados; ++j)
+			{
+				discAux = vetTurmas[i].consultaDeAlunos(j);
+				cout << discAux;
+			}
 		}
 	}
 
@@ -417,13 +433,12 @@ int main()
 void exibirNome(int m, Turma t[], int tamVet)
 {
 	string nomeAux;
-	bool nomeJaFoiExibido = false;
 	for (int i = 0; i < tamVet; i++){
-		nomeAux = t[i].getAlunoPorMatricula(m);
-		if (nomeAux != "NE" && !nomeJaFoiExibido)
+		nomeAux = t[i].getNomeAlunoPorMatricula(m);
+		if (nomeAux != "NE")
 		{
 			cout << nomeAux << endl;
-			nomeJaFoiExibido = true;
+			break;
 		}
 	}
 }
@@ -434,9 +449,7 @@ void exibirListagemDisciplinas(int m, Turma t[], int tamVet)
 	for (int i = 0; i < tamVet; i++){
 		consDiscAux = t[i].consultaDisciplinas(m);
 		if (consDiscAux != "NE")
-		{
 			cout << consDiscAux;
-		}
 	}
 }
 
@@ -444,7 +457,7 @@ void consultaDeDisciplinas(int m, Turma t[], int tamVet)
 {
 	cout << "Aluno: ";
 	exibirNome(m, t, tamVet);
-	cout << "Codigo" << setw(20) << "Disciplina" << setw(20) << "Turma" << endl;
+	cout << "Codigo" << "\t" << "Disciplina" << "\t\t" << "Turma" << endl;
 	exibirListagemDisciplinas(m, t, tamVet);
 }
 
@@ -530,20 +543,20 @@ void inserirAlunosETurmas()
 	t2.setCodigoDisciplina("4613A");
 	t3.setCodigoDisciplina("461OR");
 
-	t0.adcionaAluno(a0);
-	t0.adcionaAluno(a2);
-	t0.adcionaAluno(a5);
+	t0.adicionaAluno(a0);
+	t0.adicionaAluno(a2);
+	t0.adicionaAluno(a5);
 
-	t1.adcionaAluno(a1);
-	t1.adcionaAluno(a3);
-	t1.adcionaAluno(a5);
+	t1.adicionaAluno(a1);
+	t1.adicionaAluno(a3);
+	t1.adicionaAluno(a5);
 
-	t2.adcionaAluno(a3);
-	t2.adcionaAluno(a4);
-	t2.adcionaAluno(a5);
+	t2.adicionaAluno(a3);
+	t2.adicionaAluno(a4);
+	t2.adicionaAluno(a5);
 
-	t3.adcionaAluno(a0);
-	t3.adcionaAluno(a3);
+	t3.adicionaAluno(a0);
+	t3.adicionaAluno(a3);
 }
 
 
