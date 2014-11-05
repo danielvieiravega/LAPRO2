@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1383139196 source:/home/PORTOALEGRE/10049190/lapro2ec/polinomio/main.cpp
+	<iostream>
+	"termo.h"
+
+1383139279 source:/home/PORTOALEGRE/10049190/lapro2ec/polinomio/termo.cpp
+	"termo.h"
+	<sstream>
+	<cmath>
+
+1383139101 /home/PORTOALEGRE/10049190/lapro2ec/polinomio/termo.h
+	<string>
+
+1415191162 source:h:\repos\lapro2\templates\polinomio\main.cpp
+	<iostream>
+	"termo.h"
+
+1415190015 h:\repos\lapro2\templates\polinomio\termo.h
+	<string>
+
+1415190015 h:\repos\lapro2\templates\polinomio\include\termo.h
+	<string>
+
+1415190015 source:h:\repos\lapro2\templates\polinomio\termo.cpp
+	"termo.h"
+	<sstream>
+	<cmath>
+
