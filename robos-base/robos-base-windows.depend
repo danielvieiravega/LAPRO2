@@ -34,7 +34,7 @@
 
 1320013446 c:\users\daniel.vega\source\repos\lapro2\robos-base\point.h
 
-1320013830 c:\users\daniel.vega\source\repos\lapro2\robos-base\robo.h
+1415365482 c:\users\daniel.vega\source\repos\lapro2\robos-base\robo.h
 	<vector>
 	"Point.h"
 
@@ -58,9 +58,11 @@
 
 1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\jerror.h
 
-1415122329 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\labirintoteste.cpp
+1415388317 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\labirintoteste.cpp
 	"LabirintoTeste.h"
 	<iostream>
+	<string>
+	<sstream>
 
 1320026578 c:\users\daniel.vega\source\repos\lapro2\robos-base\labirintoteste.h
 	<fstream>
