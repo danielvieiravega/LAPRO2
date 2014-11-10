@@ -1,25 +1,24 @@
-#ifndef CONTAPOUPANCA_H
-#define CONTAPOUPANCA_H
-#include "Conta.h"
+#ifndef CONTACOMUM_H
+#define CONTACOMUM_H
+
+#include <Conta.h>
 #include <list>
 #include "Transacao.h"
 
 using namespace std;
 
-class ContaPoupanca : public Conta
+class ContaComum : public Conta
 {
     public:
-        ContaPoupanca(int d);
+        ContaComum();
         void deposito(float v);
         void retirada(float v);
         string extrato();
-
     private:
-        int diaAniversario;
                 int numeroConta;
         string nomeCorrentista;
         float saldo;
         list<Transacao*> transacoes;
 };
 
-#endif // CONTAPOUPANCA_H
+#endif // CONTACOMUM_H

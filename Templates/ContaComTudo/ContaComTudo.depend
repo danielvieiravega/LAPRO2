@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1415558269 source:c:\users\paloma\documents\github\lapro2\templates\contacomtudo\main.cpp
+	<iostream>
+
+1415558269 source:c:\users\paloma\documents\github\lapro2\templates\contacomtudo\src\conta.cpp
+	"Conta.h"
+
+1415585869 c:\users\paloma\documents\github\lapro2\templates\contacomtudo\include\conta.h
+	<string>
+
+1415588098 source:c:\users\paloma\documents\github\lapro2\templates\contacomtudo\src\contalimite.cpp
+	"ContaLimite.h"
+	"Conta.h"
+	<sstream>
+
+1415587510 c:\users\paloma\documents\github\lapro2\templates\contacomtudo\include\contalimite.h
+	"Conta.h"
+	<list>
+	"Transacao.h"
+
+1415563454 source:c:\users\paloma\documents\github\lapro2\templates\contacomtudo\src\contapoupanca.cpp
+	"ContaPoupanca.h"
+
+1415585869 c:\users\paloma\documents\github\lapro2\templates\contacomtudo\include\contapoupanca.h
+	"Conta.h"
+	<list>
+	"Transacao.h"
+
+1415564451 c:\users\paloma\documents\github\lapro2\templates\contacomtudo\include\transacao.h
+	<string>
+
+1415564451 source:c:\users\paloma\documents\github\lapro2\templates\contacomtudo\src\transacao.cpp
+	"Transacao.h"
+	<sstream>
+
+1415587995 source:c:\users\paloma\documents\github\lapro2\templates\contacomtudo\src\contacomum.cpp
+	"ContaComum.h"
+	"Conta.h"
+	<sstream>
+
+1415588099 c:\users\paloma\documents\github\lapro2\templates\contacomtudo\include\contacomum.h
+	<Conta.h>
+	<list>
+	"Transacao.h"
+

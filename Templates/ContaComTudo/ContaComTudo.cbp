@@ -35,12 +35,15 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Conta.h" />
+		<Unit filename="include/ContaComum.h" />
 		<Unit filename="include/ContaLimite.h" />
 		<Unit filename="include/ContaPoupanca.h" />
+		<Unit filename="include/Transacao.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Conta.cpp" />
+		<Unit filename="src/ContaComum.cpp" />
 		<Unit filename="src/ContaLimite.cpp" />
 		<Unit filename="src/ContaPoupanca.cpp" />
+		<Unit filename="src/Transacao.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
