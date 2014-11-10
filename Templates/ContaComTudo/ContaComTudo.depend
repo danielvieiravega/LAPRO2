@@ -43,3 +43,52 @@
 	<list>
 	"Transacao.h"
 
+1415619690 source:h:\repos\lapro2\templates\contacomtudo\main.cpp
+	<iostream>
+	"Conta.h"
+	"ContaComum.h"
+	"ContaLimite.h"
+	"ContaPoupanca.h"
+	"Transacao.h"
+
+1415619310 h:\repos\lapro2\templates\contacomtudo\include\conta.h
+	<string>
+	"Transacao.h"
+
+1415618942 h:\repos\lapro2\templates\contacomtudo\include\transacao.h
+	<string>
+
+1415619518 h:\repos\lapro2\templates\contacomtudo\include\contacomum.h
+	<Conta.h>
+	<list>
+	"Transacao.h"
+
+1415619531 h:\repos\lapro2\templates\contacomtudo\include\contalimite.h
+	"Conta.h"
+	<list>
+	"Transacao.h"
+
+1415619528 h:\repos\lapro2\templates\contacomtudo\include\contapoupanca.h
+	"Conta.h"
+	<list>
+	"Transacao.h"
+
+1415619656 source:h:\repos\lapro2\templates\contacomtudo\src\contacomum.cpp
+	"ContaComum.h"
+	"Conta.h"
+	<sstream>
+
+1415619556 source:h:\repos\lapro2\templates\contacomtudo\src\contalimite.cpp
+	"ContaLimite.h"
+	"Conta.h"
+	<sstream>
+
+1415619568 source:h:\repos\lapro2\templates\contacomtudo\src\contapoupanca.cpp
+	"ContaPoupanca.h"
+	"Conta.h"
+	<sstream>
+
+1415619589 source:h:\repos\lapro2\templates\contacomtudo\src\transacao.cpp
+	"Transacao.h"
+	<sstream>
+

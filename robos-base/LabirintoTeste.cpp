@@ -27,7 +27,7 @@ void LabirintoTeste :: loadMaze(string arquivo)
             cout << "Qnt \n: " << cont << " posicao " << i << endl;
             if(cont == 3)
             {
-                cout << "entreei  " <<  arquivo[i] << "  " << arquivo.length();
+                cout << "entrei  " <<  arquivo[i] << "  " << arquivo.length();
                 int inicio = i + 1;
                 int fim = arquivo.length() - 1;
                 cout << endl << "inicio: " << inicio << "  " << "fim: " << fim << endl;

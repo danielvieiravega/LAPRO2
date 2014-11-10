@@ -10,15 +10,15 @@ using namespace std;
 class ContaComum : public Conta
 {
     public:
-        ContaComum();
-        void deposito(float v);
-        void retirada(float v);
+        ContaComum(int numero, string nome);
+        void deposito(float v, Transacao t);
+        void retirada(float v, Transacao t);
         string extrato();
     private:
-                int numeroConta;
+        int numeroConta;
         string nomeCorrentista;
         float saldo;
-        list<Transacao*> transacoes;
+        list<Transacao> transacoes;
 };
 
 #endif // CONTACOMUM_H

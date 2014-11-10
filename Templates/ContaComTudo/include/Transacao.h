@@ -7,8 +7,9 @@ using namespace std;
 class Transacao
 {
     public:
-        Transacao(int d, int m, int a, float v);
+        Transacao(int d, int m, int a, string descr);
         string ToString();
+        void setValorTransacao(float v);
     private:
         int dia;
         int mes;
