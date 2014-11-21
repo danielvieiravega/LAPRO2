@@ -11,76 +11,45 @@ LabirintoTeste :: LabirintoTeste()
 // aqui so gera um espaco fechado, com uma saida na parte de baixo
 void LabirintoTeste :: loadMaze(string arquivo)
 {
-    //TODO: ENCERRAR O PROGRAMA CASO NAO ENCONTRE O ARQUIVO!!
-    std::cout << arquivo << endl;
-    std::string dimensionsLine = arquivo.substr(4,6);
-    std::stringstream ss(dimensionsLine);
-    ss >> dimx >> dimy;
-    string  labirinto;
-    int cont = 0;
-    cout << "tam arquivo" << arquivo.length() << endl;
-    for(int i =0; i< arquivo.length(); i++)
-    {
-        if(arquivo[i] == '\n')
-        {
-            cont++;
-            cout << "Qnt \n: " << cont << " posicao " << i << endl;
-            if(cont == 3)
-            {
-                cout << "entrei  " <<  arquivo[i] << "  " << arquivo.length();
-                int inicio = i + 1;
-                int fim = arquivo.length() - 1;
-                cout << endl << "inicio: " << inicio << "  " << "fim: " << fim << endl;
-                labirinto = arquivo.substr(inicio, fim);
-                break;
-            }
-        }
-    }
-    cout << labirinto << endl;
-    int tamLabirinto = 0;
-    for(int i= 0; i<dimx; i++)
-    {
-        for(int j=0; j<dimy; j++)
-        {
-            if(labirinto[tamLabirinto] == '*')
-            {
-                lab[i][j] = '*';
-                tamLabirinto++;
-            }
 
-            else if(labirinto[tamLabirinto] == ' ')
-                {
-                    lab[i][j] = ' ';
-                    tamLabirinto++;
-                }
-        }
-        tamLabirinto += dimx;
-    }
-    //dimx = 20; dimy = 20;
-    /*for(int i=0; i<dimy; i++)
-        for(int j=0; j<dimx; j++)
-            lab[i][j] = ' ';
-    for(int i=0; i<dimx; i++)
-    {
-        lab[0][i] = '*';
-        lab[dimy-1][i] = '*';
-        lab[i][0] = '*';
-        lab[i][dimx-1] = '*';
-    }
-    lab[dimy-2][dimx-1] = ' '; // saida
+    dimx = 9;
+    dimy = 9;
+getMazeFromFile(arquivo);
 
-    for(int i=0; i<dimx; i++)
-        lab[i][3] = '*';
-    /* for (int i =0; i<dimx; i++)
-        for (int j =0; j<dimx; j++)
-            lab[i][j]='*';
-            */
     robot = 1;
-    posIni = Point(1,1);
+    posIni = Point(2,2);
+}
+void LabirintoTeste::getMazeFromFile(string arquivo)
+{
+        int linha = 0;
+    int coluna = 0;
+    bool is_lab = false; //Fica true quando estamos no labirinto dentro do arquivo
 
-
-//    for(int i=0; i < arquivo.size();i++)
-//        cout << arquivo[i] << "[" << i << "]";
+    for(unsigned int i =0; i< arquivo.length(); i++) //deixei unsigned por causa do warning do codeblocks: comparison between signed and unsigned integer expressions [-Wsign-compare]|
+    {
+        if(is_lab)
+        {
+            if(arquivo[i] == '\r\n' || arquivo[i] == '\n')
+            {
+                linha++;
+                coluna = 0;
+            }
+            else
+                lab[linha][coluna++] = arquivo[i];
+        }
+        else
+        {
+            //aqui é as 3 linhas de configuracao do arquivo do labirinto
+            if(arquivo[i] == '\r\n' || arquivo[i] == '\n')
+                linha++;
+            if(linha == 3)
+            {
+                is_lab = true;
+                linha = 0;
+                coluna = 0;
+            }
+        }
+    }
 }
 
 // Retorna true se a posição x,y do labirinto

@@ -9,7 +9,11 @@ int main()
     GL::init();
 
     std::ifstream ifs("labirinto.txt");
-    std::string content( (std::istreambuf_iterator<char>(ifs) ),
+    //std::ifstream ifs("labirinto.txt"); //Carrega um arquivo que não existe
+    if(!ifs.is_open())
+    {std::cout << "Falha ao abrir arquivo" << endl;
+        return 1; //encerra pois não conseguiu abrir o arquivo
+    }std::string content( (std::istreambuf_iterator<char>(ifs) ),
                        (std::istreambuf_iterator<char>()    ) );
 
 

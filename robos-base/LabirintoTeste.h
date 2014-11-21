@@ -15,6 +15,7 @@ class LabirintoTeste : public Labirinto {
 	    void loadMaze(string arquivo);
         int  getRobot();
         Point getIniPos();
+        void getMazeFromFile(string arquivo);
 	private:
 		int dimx, dimy;		// Tamanho do labirinto
         char lab[100][100];	// O labirinto em si
