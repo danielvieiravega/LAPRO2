@@ -2,32 +2,67 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
+#include <ctype.h>
+using namespace std;
 LabirintoTeste :: LabirintoTeste()
 {
 }
 
-// Deveria carregar o labirinto de um arquivo,
-// aqui so gera um espaco fechado, com uma saida na parte de baixo
-void LabirintoTeste :: loadMaze(string arquivo)
+int LabirintoTeste::getNumberOfCharactersBeforeNewLine(string arquivo, int pos)
 {
-
-    dimx = 9;
-    dimy = 9;
-getMazeFromFile(arquivo);
-
-    robot = 1;
-    posIni = Point(2,2);
+    int contLine = 0;
+    for (unsigned int i=0; i<arquivo.length(); i++)
+    {
+        if(arquivo[i] == '\n')
+            contLine++;
+        if(contLine == pos)
+            return i;
+    }
 }
+//Obtenho as dimensoes linhas x coluna
+void LabirintoTeste::setDim(string arquivo)
+{
+    int firstNewLine = getNumberOfCharactersBeforeNewLine(arquivo,1);
+    string firstLine = arquivo.substr(4, firstNewLine);
+    stringstream fl(firstLine);
+    fl >> dimy >> dimx;
+
+}
+
+//obtenho as posções x e y do robo
+void LabirintoTeste::setPos(string arquivo)
+{
+    int posx, posy;
+    int firstNewLine = getNumberOfCharactersBeforeNewLine(arquivo,1);
+    int afterSecondNewLine = getNumberOfCharactersBeforeNewLine(arquivo,1);
+    firstNewLine += 5;
+    string secondLine = arquivo.substr(firstNewLine, afterSecondNewLine);
+    stringstream sl(secondLine);
+    sl >> posx >> posy;
+    posIni = Point(posx, posy);
+}
+
+//Obtenho o tipo de robo
+void LabirintoTeste::setRobot(string arquivo)
+{
+    int robotNumber;
+    int afterThirdNewLine = getNumberOfCharactersBeforeNewLine(arquivo,2);
+    int afterFourthNewLine = getNumberOfCharactersBeforeNewLine(arquivo,3);
+    afterThirdNewLine += 5;
+    string thirdLine = arquivo.substr(afterThirdNewLine, afterFourthNewLine);
+    stringstream tl(thirdLine);
+    tl >> robot;
+}
+
 void LabirintoTeste::getMazeFromFile(string arquivo)
 {
-        int linha = 0;
+    int linha = 0;
     int coluna = 0;
-    bool is_lab = false; //Fica true quando estamos no labirinto dentro do arquivo
+    bool isLab = false; //Fica true quando estamos no labirinto dentro do arquivo
 
     for(unsigned int i =0; i< arquivo.length(); i++) //deixei unsigned por causa do warning do codeblocks: comparison between signed and unsigned integer expressions [-Wsign-compare]|
     {
-        if(is_lab)
+        if(isLab)
         {
             if(arquivo[i] == '\r\n' || arquivo[i] == '\n')
             {
@@ -39,18 +74,37 @@ void LabirintoTeste::getMazeFromFile(string arquivo)
         }
         else
         {
-            //aqui é as 3 linhas de configuracao do arquivo do labirinto
+            //aqui é para passar as linhas de configuracao do arquivo do labirinto
             if(arquivo[i] == '\r\n' || arquivo[i] == '\n')
                 linha++;
             if(linha == 3)
             {
-                is_lab = true;
+                isLab = true;
                 linha = 0;
                 coluna = 0;
             }
         }
     }
 }
+
+// Deveria carregar o labirinto de um arquivo,
+// aqui so gera um espaco fechado, com uma saida na parte de baixo
+void LabirintoTeste :: loadMaze(string arquivo)
+{
+    setDim(arquivo);
+    cout << "dimx: " << dimx << endl << "dimy: " << dimy << endl;
+
+    setPos(arquivo);
+    cout << "posx: " << posIni.getX() << endl << "posy: " << posIni.getY() << endl;
+
+    setRobot(arquivo);
+    cout << "Robot: " << robot << endl;
+
+    getMazeFromFile(arquivo);
+
+}
+
+
 
 // Retorna true se a posição x,y do labirinto
 // estiver livre (i.e. contenha um espaço em branco)
