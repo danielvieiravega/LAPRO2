@@ -7,12 +7,15 @@
 
 using namespace std;
 
-class RoboC3PO
+class RoboC3PO : public Robo
 {
-    public:
-        RoboC3PO();
-    protected:
-    private:
+public:
+    RoboC3PO(const Point& posIni, Labirinto *l, int maxSteps);	// Construtor
+    void draw();
+    void generateSteps();
+    vector<Point> getSteps();
+private:
+    TEX* roboTex; // id de textura do robo
 };
 
 #endif // ROBOC3PO_H
