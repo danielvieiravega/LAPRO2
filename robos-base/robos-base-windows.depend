@@ -184,3 +184,95 @@
 	<vector>
 	"Texture.h"
 
+1416003886 source:c:\users\daniel\documents\github\lapro2\robos-base\gl.cpp
+	"GL.h"
+	<sstream>
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\gl.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cmath>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
+1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\glut.h
+	"freeglut.h"
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\freeglut_std.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\freeglut_ext.h
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\labirinto.h
+	"Point.h"
+	<string>
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\point.h
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\robo.h
+	<vector>
+	"Point.h"
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\texture.h
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<jpeglib.h>
+
+1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jpeglib.h
+	"jconfig.h"
+	"jmorecfg.h"
+	"jpegint.h"
+	"jerror.h"
+
+1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jconfig.h
+
+1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jmorecfg.h
+
+1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jerror.h
+
+1416617846 source:c:\users\daniel\documents\github\lapro2\robos-base\labirintoteste.cpp
+	"LabirintoTeste.h"
+	<iostream>
+	<string>
+	<sstream>
+
+1416616784 c:\users\daniel\documents\github\lapro2\robos-base\labirintoteste.h
+	<fstream>
+	"Labirinto.h"
+
+1416616784 source:c:\users\daniel\documents\github\lapro2\robos-base\main.cpp
+	"LabirintoTeste.h"
+	"RoboB9.h"
+	"GL.h"
+
+1416003886 c:\users\daniel\documents\github\lapro2\robos-base\robob9.h
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
+1416003886 source:c:\users\daniel\documents\github\lapro2\robos-base\robob9.cpp
+	"RoboB9.h"
+	"GL.h"
+	<stdlib.h>
+	<time.h>
+	<iostream>
+
+1416003886 source:c:\users\daniel\documents\github\lapro2\robos-base\texture.cpp
+	<math.h>
+	<string.h>
+	<vector>
+	"Texture.h"
+

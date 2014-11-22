@@ -29,6 +29,8 @@ int main()
     GL::setLabirintoRobo(lab, robo);
     // Inicializa janela grafica e inicia programa
     GL::loop();
+
+    return 0;
 }
 
 

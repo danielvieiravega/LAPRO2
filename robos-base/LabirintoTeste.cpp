@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <ctype.h>
+
 using namespace std;
 LabirintoTeste :: LabirintoTeste()
 {
@@ -26,7 +26,6 @@ void LabirintoTeste::setDim(string arquivo)
     string firstLine = arquivo.substr(4, firstNewLine);
     stringstream fl(firstLine);
     fl >> dimy >> dimx;
-
 }
 
 //obtenho as posções x e y do robo
@@ -74,10 +73,9 @@ void LabirintoTeste::getMazeFromFile(string arquivo)
         }
         else
         {
-            //aqui é para passar as linhas de configuracao do arquivo do labirinto
             if(arquivo[i] == '\r\n' || arquivo[i] == '\n')
                 linha++;
-            if(linha == 3)
+            if(linha == 3) //aqui é para passar as linhas de configuracao do arquivo do labirinto
             {
                 isLab = true;
                 linha = 0;
@@ -101,10 +99,7 @@ void LabirintoTeste :: loadMaze(string arquivo)
     cout << "Robot: " << robot << endl;
 
     getMazeFromFile(arquivo);
-
 }
-
-
 
 // Retorna true se a posição x,y do labirinto
 // estiver livre (i.e. contenha um espaço em branco)
