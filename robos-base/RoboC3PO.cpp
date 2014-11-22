@@ -22,21 +22,26 @@ void RoboC3PO::generateSteps()
     steps.push_back(Point(x,y));
     while(!saiu && cont < maxSteps)
     {
-        int dx, dy;
-        do
+        int dx, dy = 1;
+        if(!lab->isEmpty(Point(x+dx, y+dy)))
         {
-            dy = 1;
-            if(estaTrancado)
-
-
+            x += dx;
+            y += dy;
         }
-        while(!lab->isEmpty(Point(x+dx, y+dy)));
-        x += dx;
-        y += dy;
+        else{
+           dx = 0;
+           if(!lab->isEmpty(Point(x+dx, y+dy)))
+                x += dx;
+            else
+            {
+                dx = -1;
+                if(!lab->isEmpty(Point(x+dx, y+dy)))
+                    x += dx;
+            }
+        }
         steps.push_back(Point(x, y));
         cont++;
-        if(x >= lab->getWidth() || x < 0
-                || y >= lab->getHeight() || y < 0)
+        if(x >= lab->getWidth() || x < 0 || y >= lab->getHeight() || y < 0)
             saiu = true;
     }
 }

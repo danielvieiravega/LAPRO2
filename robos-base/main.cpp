@@ -26,7 +26,7 @@ int main()
     Point posIni = lab->getIniPos();
     cout << "Pos ini: " << posIni.getX() << " , " << posIni.getY() << endl;
     RoboB9* robo = new RoboB9(posIni, lab, 200); // 200 passos no maximo
-    RoboC3PO* c3po = new RoboC3PO(posIni, lab, 500);
+    RoboC3PO* c3po = new RoboC3PO(posIni, lab, 100);
 
     GL::setLabirintoRobo(lab, c3po);
     // Inicializa janela grafica e inicia programa

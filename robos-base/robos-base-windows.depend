@@ -1,281 +1,4 @@
 # depslib dependency file v1.0
-1320060104 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\gl.cpp
-	"GL.h"
-	<sstream>
-
-1320060022 c:\users\daniel.vega\source\repos\lapro2\robos-base\gl.h
-	<iostream>
-	<fstream>
-	<stdlib.h>
-	<cmath>
-	<GLUT/glut.h>
-	<GL/glut.h>
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\gl\glut.h
-	"freeglut.h"
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\gl\freeglut.h
-	"freeglut_std.h"
-	"freeglut_ext.h"
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\gl\freeglut_std.h
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\gl\freeglut_ext.h
-
-1320013432 c:\users\daniel.vega\source\repos\lapro2\robos-base\labirinto.h
-	"Point.h"
-	<string>
-
-1320013446 c:\users\daniel.vega\source\repos\lapro2\robos-base\point.h
-
-1415365482 c:\users\daniel.vega\source\repos\lapro2\robos-base\robo.h
-	<vector>
-	"Point.h"
-
-1320024114 c:\users\daniel.vega\source\repos\lapro2\robos-base\texture.h
-	<stdio.h>
-	<stdlib.h>
-	<string>
-	<GLUT/glut.h>
-	<GL/freeglut.h>
-	<jpeglib.h>
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\jpeglib.h
-	"jconfig.h"
-	"jmorecfg.h"
-	"jpegint.h"
-	"jerror.h"
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\jconfig.h
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\jmorecfg.h
-
-1320027536 c:\users\daniel.vega\source\repos\lapro2\robos-base\include\jerror.h
-
-1416606096 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\labirintoteste.cpp
-	"LabirintoTeste.h"
-	<iostream>
-	<string>
-	<sstream>
-	<ctype.h>
-
-1416605964 c:\users\daniel.vega\source\repos\lapro2\robos-base\labirintoteste.h
-	<fstream>
-	"Labirinto.h"
-
-1416602507 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\main.cpp
-	"LabirintoTeste.h"
-	"RoboB9.h"
-	"GL.h"
-
-1320025878 c:\users\daniel.vega\source\repos\lapro2\robos-base\robob9.h
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
-
-1320027304 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\robob9.cpp
-	"RoboB9.h"
-	"GL.h"
-	<stdlib.h>
-	<time.h>
-	<iostream>
-
-1320024172 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\texture.cpp
-	<math.h>
-	<string.h>
-	<vector>
-	"Texture.h"
-
-1415193342 source:h:\repos\lapro2\robos-base\gl.cpp
-	"GL.h"
-	<sstream>
-
-1415193342 h:\repos\lapro2\robos-base\gl.h
-	<iostream>
-	<fstream>
-	<stdlib.h>
-	<cmath>
-	<GLUT/glut.h>
-	<GL/glut.h>
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
-
-1415193343 h:\repos\lapro2\robos-base\include\gl\glut.h
-	"freeglut.h"
-
-1415193343 h:\repos\lapro2\robos-base\include\gl\freeglut.h
-	"freeglut_std.h"
-	"freeglut_ext.h"
-
-1415193343 h:\repos\lapro2\robos-base\include\gl\freeglut_std.h
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
-
-1415193343 h:\repos\lapro2\robos-base\include\gl\freeglut_ext.h
-
-1415193342 h:\repos\lapro2\robos-base\labirinto.h
-	"Point.h"
-	<string>
-
-1415193343 h:\repos\lapro2\robos-base\point.h
-
-1415193343 h:\repos\lapro2\robos-base\robo.h
-	<vector>
-	"Point.h"
-
-1415193343 h:\repos\lapro2\robos-base\texture.h
-	<stdio.h>
-	<stdlib.h>
-	<string>
-	<GLUT/glut.h>
-	<GL/freeglut.h>
-	<jpeglib.h>
-
-1415193343 h:\repos\lapro2\robos-base\include\jpeglib.h
-	"jconfig.h"
-	"jmorecfg.h"
-	"jpegint.h"
-	"jerror.h"
-
-1415193343 h:\repos\lapro2\robos-base\include\jconfig.h
-
-1415193343 h:\repos\lapro2\robos-base\include\jmorecfg.h
-
-1415193343 h:\repos\lapro2\robos-base\include\jerror.h
-
-1415614623 source:h:\repos\lapro2\robos-base\labirintoteste.cpp
-	"LabirintoTeste.h"
-	<iostream>
-	<string>
-	<sstream>
-
-1415193343 h:\repos\lapro2\robos-base\labirintoteste.h
-	<fstream>
-	"Labirinto.h"
-
-1415193344 source:h:\repos\lapro2\robos-base\main.cpp
-	"LabirintoTeste.h"
-	"RoboB9.h"
-	"GL.h"
-
-1415193343 h:\repos\lapro2\robos-base\robob9.h
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
-
-1415193343 source:h:\repos\lapro2\robos-base\robob9.cpp
-	"RoboB9.h"
-	"GL.h"
-	<stdlib.h>
-	<time.h>
-	<iostream>
-
-1415193343 source:h:\repos\lapro2\robos-base\texture.cpp
-	<math.h>
-	<string.h>
-	<vector>
-	"Texture.h"
-
-1416003886 source:c:\users\daniel\documents\github\lapro2\robos-base\gl.cpp
-	"GL.h"
-	<sstream>
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\gl.h
-	<iostream>
-	<fstream>
-	<stdlib.h>
-	<cmath>
-	<GLUT/glut.h>
-	<GL/glut.h>
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
-
-1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\glut.h
-	"freeglut.h"
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\freeglut.h
-	"freeglut_std.h"
-	"freeglut_ext.h"
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\freeglut_std.h
-	<windows.h>
-	<GL/gl.h>
-	<GL/glu.h>
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\include\gl\freeglut_ext.h
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\labirinto.h
-	"Point.h"
-	<string>
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\point.h
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\robo.h
-	<vector>
-	"Point.h"
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\texture.h
-	<stdio.h>
-	<stdlib.h>
-	<string>
-	<GLUT/glut.h>
-	<GL/freeglut.h>
-	<jpeglib.h>
-
-1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jpeglib.h
-	"jconfig.h"
-	"jmorecfg.h"
-	"jpegint.h"
-	"jerror.h"
-
-1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jconfig.h
-
-1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jmorecfg.h
-
-1416003887 c:\users\daniel\documents\github\lapro2\robos-base\include\jerror.h
-
-1416617846 source:c:\users\daniel\documents\github\lapro2\robos-base\labirintoteste.cpp
-	"LabirintoTeste.h"
-	<iostream>
-	<string>
-	<sstream>
-
-1416616784 c:\users\daniel\documents\github\lapro2\robos-base\labirintoteste.h
-	<fstream>
-	"Labirinto.h"
-
-1416616784 source:c:\users\daniel\documents\github\lapro2\robos-base\main.cpp
-	"LabirintoTeste.h"
-	"RoboB9.h"
-	"GL.h"
-
-1416003886 c:\users\daniel\documents\github\lapro2\robos-base\robob9.h
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
-
-1416003886 source:c:\users\daniel\documents\github\lapro2\robos-base\robob9.cpp
-	"RoboB9.h"
-	"GL.h"
-	<stdlib.h>
-	<time.h>
-	<iostream>
-
-1416003886 source:c:\users\daniel\documents\github\lapro2\robos-base\texture.cpp
-	<math.h>
-	<string.h>
-	<vector>
-	"Texture.h"
-
 1416620181 source:c:\users\daniel\documents\sources\lapro2\robos-base\gl.cpp
 	"GL.h"
 	<sstream>
@@ -345,13 +68,18 @@
 	<fstream>
 	"Labirinto.h"
 
-1416622396 source:c:\users\daniel\documents\sources\lapro2\robos-base\main.cpp
+1416666227 source:c:\users\daniel\documents\sources\lapro2\robos-base\main.cpp
 	"LabirintoTeste.h"
 	"RoboB9.h"
 	"GL.h"
 	"RoboC3PO.h"
 
 1416620181 c:\users\daniel\documents\sources\lapro2\robos-base\robob9.h
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
+1416621685 c:\users\daniel\documents\sources\lapro2\robos-base\roboc3po.h
 	"Labirinto.h"
 	"Robo.h"
 	"Texture.h"
@@ -369,11 +97,9 @@
 	<vector>
 	"Texture.h"
 
-1416620213 source:c:\users\daniel\documents\sources\lapro2\robos-base\roboc3po.cpp
+1416667121 source:c:\users\daniel\documents\sources\lapro2\robos-base\roboc3po.cpp
 	"RoboC3PO.h"
-
-1416621685 c:\users\daniel\documents\sources\lapro2\robos-base\roboc3po.h
-	"Labirinto.h"
-	"Robo.h"
-	"Texture.h"
+	"GL.h"
+	<stdlib.h>
+	<iostream>
 
