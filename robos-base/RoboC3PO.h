@@ -14,6 +14,7 @@ public:
     void draw();
     void generateSteps();
     vector<Point> getSteps();
+    void percorreLabirinto(int dx, int dy, int &x, int &y, bool &isTrancado);
 private:
     TEX* roboTex; // id de textura do robo
 };

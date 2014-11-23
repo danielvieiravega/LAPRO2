@@ -1,43 +1,22 @@
-#include "RoboC3PO.h"
+#include "RoboR2D2.h"
 #include "GL.h"
 #include <stdlib.h>
 #include <iostream>
 
 using namespace std;
 
-RoboC3PO::RoboC3PO(const Point& posIni, Labirinto *l, int maxSteps)
+RoboR2D2::RoboR2D2(const Point& posIni, Labirinto *l, int maxSteps)
     : Robo(posIni, l, maxSteps)
 {
-    roboTex = CarregaTextura("c3po.jpg", false);
+    roboTex = CarregaTextura("r2d2.jpg", false);
 }
 
-void RoboC3PO::percorreLabirinto(int dx, int dy, int &x, int &y, bool &isTrancado)
+void RoboR2D2::percorreLabirinto(int dx, int dy, int &x, int &y)
 {
-    if(lab->isEmpty(Point(x+dx, y+dy)))//Caminha à direita
-    {
-        x += dx;
-        y += dy;
-    }
-    else
-    {
-        dy = 1;
-        if(lab->isEmpty(Point(x, y+dy))) //Testa se a DIREITA tá livre
-        {
-            y+=dy;
-        }
-        else //Testa se a ESQUERDA tá livre
-        {
-            dy = -1;
-            if(lab->isEmpty(Point(x, y+dy)))
-            {
-                y+=dy;
-            }
-            isTrancado = true;
-        }
-    }
+
 }
 
-void RoboC3PO::generateSteps()
+void RoboR2D2::generateSteps()
 {
     int cont = 1;
     bool saiu = false;
@@ -50,13 +29,9 @@ void RoboC3PO::generateSteps()
     while(!saiu && cont < maxSteps)
     {
         int dx, dy = 0;
-        //if(isTrancado)
-        //    dx = -1;
-        //else
-            dx = 1;
         do
         {
-            percorreLabirinto(dx, dy, x, y, isTrancado);
+            percorreLabirinto(dx, dy, x, y);
         }
         while(!lab->isEmpty(Point(x, y)));
 
@@ -67,7 +42,7 @@ void RoboC3PO::generateSteps()
     }
 }
 
-void RoboC3PO::draw()
+void RoboR2D2::draw()
 {
     float rx,ry;
     float deltax = GL::getDeltaX();

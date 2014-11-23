@@ -103,3 +103,118 @@
 	<stdlib.h>
 	<iostream>
 
+1415558270 source:c:\users\paloma\documents\github\lapro2\robos-base\gl.cpp
+	"GL.h"
+	<sstream>
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\gl.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cmath>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\gl\glut.h
+	"freeglut.h"
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\gl\freeglut_std.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\gl\freeglut_ext.h
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\labirinto.h
+	"Point.h"
+	<string>
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\point.h
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\robo.h
+	<vector>
+	"Point.h"
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\texture.h
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<GLUT/glut.h>
+	<GL/freeglut.h>
+	<jpeglib.h>
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\jpeglib.h
+	"jconfig.h"
+	"jmorecfg.h"
+	"jpegint.h"
+	"jerror.h"
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\jconfig.h
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\jmorecfg.h
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\include\jerror.h
+
+1416753599 source:c:\users\paloma\documents\github\lapro2\robos-base\labirintoteste.cpp
+	"LabirintoTeste.h"
+	<iostream>
+	<string>
+	<sstream>
+
+1416753599 c:\users\paloma\documents\github\lapro2\robos-base\labirintoteste.h
+	<fstream>
+	"Labirinto.h"
+
+1416772211 source:c:\users\paloma\documents\github\lapro2\robos-base\main.cpp
+	"LabirintoTeste.h"
+	"RoboB9.h"
+	"GL.h"
+	"RoboC3PO.h"
+
+1415558270 c:\users\paloma\documents\github\lapro2\robos-base\robob9.h
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
+1416779622 c:\users\paloma\documents\github\lapro2\robos-base\roboc3po.h
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
+1415558270 source:c:\users\paloma\documents\github\lapro2\robos-base\robob9.cpp
+	"RoboB9.h"
+	"GL.h"
+	<stdlib.h>
+	<time.h>
+	<iostream>
+
+1416778892 source:c:\users\paloma\documents\github\lapro2\robos-base\roboc3po.cpp
+	"RoboC3PO.h"
+	"GL.h"
+	<stdlib.h>
+	<iostream>
+
+1415558270 source:c:\users\paloma\documents\github\lapro2\robos-base\texture.cpp
+	<math.h>
+	<string.h>
+	<vector>
+	"Texture.h"
+
+1416779518 source:c:\users\paloma\documents\github\lapro2\robos-base\robor2d2.cpp
+	"RoboR2D2.h"
+	"GL.h"
+	<stdlib.h>
+	<iostream>
+
+1416779622 c:\users\paloma\documents\github\lapro2\robos-base\robor2d2.h
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
+
