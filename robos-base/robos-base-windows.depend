@@ -172,11 +172,12 @@
 	<fstream>
 	"Labirinto.h"
 
-1416772211 source:c:\users\paloma\documents\github\lapro2\robos-base\main.cpp
+1416779818 source:c:\users\paloma\documents\github\lapro2\robos-base\main.cpp
 	"LabirintoTeste.h"
 	"RoboB9.h"
 	"GL.h"
 	"RoboC3PO.h"
+	"RoboR2D2.h"
 
 1415558270 c:\users\paloma\documents\github\lapro2\robos-base\robob9.h
 	"Labirinto.h"
@@ -195,7 +196,7 @@
 	<time.h>
 	<iostream>
 
-1416778892 source:c:\users\paloma\documents\github\lapro2\robos-base\roboc3po.cpp
+1416779770 source:c:\users\paloma\documents\github\lapro2\robos-base\roboc3po.cpp
 	"RoboC3PO.h"
 	"GL.h"
 	<stdlib.h>
@@ -213,7 +214,7 @@
 	<stdlib.h>
 	<iostream>
 
-1416779622 c:\users\paloma\documents\github\lapro2\robos-base\robor2d2.h
+1416779860 c:\users\paloma\documents\github\lapro2\robos-base\robor2d2.h
 	"Labirinto.h"
 	"Robo.h"
 	"Texture.h"

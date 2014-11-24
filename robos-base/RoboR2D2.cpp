@@ -13,7 +13,23 @@ RoboR2D2::RoboR2D2(const Point& posIni, Labirinto *l, int maxSteps)
 
 void RoboR2D2::percorreLabirinto(int dx, int dy, int &x, int &y)
 {
-
+    if(lab->isEmpty(Point(x+dx, y+dy)))//Caminha à direita
+    {
+        x += dx;
+        y += dy;
+    }
+    else
+    {
+        dy = 1;
+        if(lab->isEmpty(Point(x, y+dy))) //Testa se a DIREITA tá livre
+        {
+            dy = -1;
+            if(lab->isEmpty(Point(x, y+dy)))
+            {
+                y+=dy;
+            }
+        }
+    }
 }
 
 void RoboR2D2::generateSteps()
