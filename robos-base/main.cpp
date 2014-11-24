@@ -18,7 +18,7 @@ int main()
         return 1; //encerra pois não conseguiu abrir o arquivo
     }
     std::string content( (std::istreambuf_iterator<char>(ifs) ),
-                         (std::istreambuf_iterator<char>()    ) );
+                         (std::istreambuf_iterator<char>()) );
 
     // Carga do labirinto
     Labirinto* lab = new LabirintoTeste();

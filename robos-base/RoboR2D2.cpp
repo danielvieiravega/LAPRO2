@@ -11,24 +11,65 @@ RoboR2D2::RoboR2D2(const Point& posIni, Labirinto *l, int maxSteps)
     roboTex = CarregaTextura("r2d2.jpg", false);
 }
 
-void RoboR2D2::percorreLabirinto(int dx, int dy, int &x, int &y)
+void RoboR2D2::percorreLabirinto(int dx, int dy, int &x, int &y, bool &inverte, bool &inverte1)// , bool &inverte2)
 {
-    if(lab->isEmpty(Point(x+dx, y+dy)))//Caminha à direita
+    if(lab->isEmpty(Point(x+dx, y+dy)))//Caminha "mantendo" a mao à esquerda
     {
         x += dx;
         y += dy;
     }
-    else
+    else if(lab->isEmpty(Point(x, y+1)))
     {
-        dy = 1;
-        if(lab->isEmpty(Point(x, y+dy))) //Testa se a DIREITA tá livre
+        if(!inverte)
+            dy = -1;
+        else
+        {
+            dy = 1;
+            inverte = false;
+        }
+        y+=dy;
+        if(lab->isEmpty(Point(x, y+1)))
+            inverte = true;
+    }
+    else if(lab->isEmpty(Point(x-1, y)))
+    {
+        if(!inverte)
+            dx = -1;
+        else
+        {
+            dx = 1;
+            inverte = false;
+        }
+        x += dx;
+        if(lab->isEmpty(Point(x-1, y)))
+            inverte = true;
+    }else if(lab->isEmpty(Point(x, y-1)))
+    {
+        if(!inverte1)
+            dy = 1;
+        else
         {
             dy = -1;
-            if(lab->isEmpty(Point(x, y+dy)))
-            {
-                y+=dy;
-            }
+            inverte1 = false;
         }
+        y += dy;
+        if(lab->isEmpty(Point(x, y-1)))
+            inverte1 = true;
+    }
+    else{
+       if(!inverte1)
+            dx = 1;
+        else
+        {
+            dx = -1;
+            inverte1 = false;
+        }
+        x += dx;
+        if(lab->isEmpty(Point(x+1, y)))
+        {
+            inverte1 = true;
+        }
+
     }
 }
 
@@ -40,14 +81,24 @@ void RoboR2D2::generateSteps()
     int y = posIni.getY();
     steps.push_back(Point(x,y));
 
-    bool isTrancado = false; //Usar se o professor disser para o robo andar para "tras" trancado
-
+    bool inverte = false;
+    bool inverte1 = false;
     while(!saiu && cont < maxSteps)
     {
         int dx, dy = 0;
+        if(!inverte)
+            dx = 1;
+        else
+            dx = -1;
+
+        if(!inverte1)
+            dy = -1;
+        else
+            dy = 1;
+
         do
         {
-            percorreLabirinto(dx, dy, x, y);
+            percorreLabirinto(dx, dy, x, y, inverte, inverte1);
         }
         while(!lab->isEmpty(Point(x, y)));
 

@@ -53,7 +53,7 @@ void RoboC3PO::generateSteps()
         //if(isTrancado)
         //    dx = -1;
         //else
-            dx = 1;
+        dx = 1;
         do
         {
             percorreLabirinto(dx, dy, x, y, isTrancado);
