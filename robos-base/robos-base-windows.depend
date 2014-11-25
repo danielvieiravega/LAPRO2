@@ -311,13 +311,13 @@
 	"Robo.h"
 	"Texture.h"
 
-1416840603 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\robor2d2.cpp
+1416925753 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\robor2d2.cpp
 	"RoboR2D2.h"
 	"GL.h"
 	<stdlib.h>
 	<iostream>
 
-1416842285 c:\users\daniel.vega\source\repos\lapro2\robos-base\robor2d2.h
+1416917043 c:\users\daniel.vega\source\repos\lapro2\robos-base\robor2d2.h
 	"Labirinto.h"
 	"Robo.h"
 	"Texture.h"
@@ -328,10 +328,22 @@
 	<vector>
 	"Texture.h"
 
-1416840124 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\main.cpp
+1416928382 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\main.cpp
 	"LabirintoTeste.h"
 	"RoboB9.h"
 	"GL.h"
 	"RoboC3PO.h"
 	"RoboR2D2.h"
+	"RoboWALLE.h"
+
+1416927622 source:c:\users\daniel.vega\source\repos\lapro2\robos-base\robowalle.cpp
+	"RoboWALLE.h"
+	"GL.h"
+	<stdlib.h>
+	<iostream>
+
+1416927705 c:\users\daniel.vega\source\repos\lapro2\robos-base\robowalle.h
+	"Labirinto.h"
+	"Robo.h"
+	"Texture.h"
 

@@ -13,7 +13,7 @@ class RoboR2D2: public Robo {
         void draw();
         void generateSteps();
         vector<Point> getSteps();
-        void percorreLabirinto(int dx, int dy, int &x, int &y, bool &inverte, bool &inverte1);
+        void percorreLabirinto(int &dx, int &dy, int &x, int &y);
     private:
         TEX* roboTex; // id de textura do robo
 };
