@@ -90,13 +90,13 @@ void LabirintoTeste::getMazeFromFile(string arquivo)
 void LabirintoTeste :: loadMaze(string arquivo)
 {
     setDim(arquivo);
-    cout << "dimx: " << dimx << endl << "dimy: " << dimy << endl;
+    //cout << "dimx: " << dimx << endl << "dimy: " << dimy << endl;
 
     setPos(arquivo);
-    cout << "posx: " << posIni.getX() << endl << "posy: " << posIni.getY() << endl;
+    //cout << "posx: " << posIni.getX() << endl << "posy: " << posIni.getY() << endl;
 
     setRobot(arquivo);
-    cout << "Robot: " << robot << endl;
+    //cout << "Robot: " << robot << endl;
 
     getMazeFromFile(arquivo);
 }
